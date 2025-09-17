@@ -1,7 +1,7 @@
 // src/pages/Homepage.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axiosInstance from "../../api/axios";  // your axios instance
+import axiosInstance from "../../api/axios";
 
 export default function Homepage() {
   const [wines, setWines] = useState([]);
