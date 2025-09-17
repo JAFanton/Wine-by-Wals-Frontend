@@ -19,4 +19,4 @@ return config;
 });
 
 
-export default api;
+export default axiosInstance;
