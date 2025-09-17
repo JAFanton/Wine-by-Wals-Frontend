@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
-import SignupModal from "./components/SignupModal";
-import LoginModal from "./components/LoginModal";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Homepage from "./pages/Homepage";
+import SignupModal from "./Components/Signup/SignupModal";
+import Homepage from "./Pages/Homepage/Homepage";
 
 function NavBar() {
   const { user, logout } = useAuth();
@@ -34,33 +32,17 @@ function NavBar() {
         onClose={() => setShowSignup(false)}
         openLogin={() => { setShowSignup(false); setShowLogin(true); }}
       />
-      <LoginModal
-        isOpen={showLogin}
-        onClose={() => setShowLogin(false)}
-        openSignup={() => { setShowLogin(false); setShowSignup(true); }}
-      />
     </nav>
   );
 }
 
 export default function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          {/* Example protected dashboard route */}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <div className="p-8">My Dashboard</div>
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+        <>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+    </>
   );
 }
