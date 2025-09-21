@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/JAFanton/Wine-by-Wals-Frontend#readme",
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
